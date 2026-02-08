@@ -14,14 +14,30 @@ public class GitHub {
     private static final SelenideElement happyPathAuth = $(By.xpath("//a[@href='/new']"));
     private static final SelenideElement invalidCredError = $(By.xpath("//div[contains(text(),'Incorrect username or password.')]") );
 
+    public void authOperation (String login,String password){
+        setuserNameorEmail();
+        setuserPassword();
+        pushsignUpButton();
 
+    }
     public void setuserNameorEmail (String username){
         userNameorEmailInput.shouldBe(visible).setValue(username);}
     public void setuserPassword (String password){
+
         userPasswordInput.shouldBe(visible).setValue(password);
     }
-    public void pushsignUpButton(){
+    public void pushsignUpButton() {
         signUpButton.shouldBe(visible).click();
     }
+    public void succesfullAuth(){
+        happyPathAuth.shouldBe(visible);
+
+    }
+     public void isErrorMessageDisplayed (){
+        invalidCredError.shouldBe(visible);
+     }
+
+
+
 }
 
