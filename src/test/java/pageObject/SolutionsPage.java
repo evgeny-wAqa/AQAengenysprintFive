@@ -9,9 +9,9 @@ import static com.codeborne.selenide.Selenide.$;
 @Data
 public class SolutionsPage {
 
-    public static final SelenideElement buttonSolutions = $(By.xpath(	" //button[contains(text(),'Solutions')]"));
-    public static final SelenideElement dropDownList = $(By.xpath("//span[text()='CI/CD']"));
-    public static final SelenideElement buttonContSales = $(By.xpath("//a[contains(@href,'ref_loc=hero')][.//text()='Contact sales']"));
+    private static final SelenideElement buttonSolutions = $(By.xpath(	" //button[contains(text(),'Solutions')]"));
+    private static final SelenideElement dropDownList = $(By.xpath("//span[text()='CI/CD']"));
+    private static final SelenideElement buttonContSales = $(By.xpath("//a[contains(@href,'ref_loc=hero')][.//text()='Contact sales']"));
     public static final SelenideElement userFirstNameInput = $(By.xpath(".//input[@ name='first_name']"));
     public static final SelenideElement userLastnameInput = $(By.xpath(".//input[@ name='last_name']"));
 
