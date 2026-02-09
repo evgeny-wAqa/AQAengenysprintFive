@@ -3,6 +3,7 @@ package pageObject;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -10,14 +11,14 @@ public class GitHubLoginpage {
 
     private static final SelenideElement userNameorEmailInput = $(By.id("login_field"));
     private static final SelenideElement userPasswordInput = $(By.id("password"));
-    private static final SelenideElement signUpButton = $(By.xpath("//input[@value='Sign in']"));
+    private static final SelenideElement signInButton = $(By.xpath("//input[@value='Sign in']"));
     private static final SelenideElement happyPathAuth = $(By.xpath("//a[@href='/new']"));
     private static final SelenideElement invalidCredError = $(By.xpath("//div[contains(text(),'Incorrect username or password.')]"));
 
     public void authOperation(String login, String password) {
         setuserNameorEmail(login);
         setuserPassword(password);
-        pushsignUpButton();
+        pushsigninButton();
 
     }
 
@@ -31,8 +32,8 @@ public class GitHubLoginpage {
         userPasswordInput.shouldBe(visible).setValue(password);
     }
 
-    public void pushsignUpButton() {
-        signUpButton.shouldBe(visible).click();
+    public void pushsigninButton() {
+        signInButton.shouldBe(visible).click();
     }
 
     public void succesfullAuth() {
